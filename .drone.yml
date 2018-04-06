@@ -25,14 +25,14 @@ pipeline:
     pull: true
     group: frontend
     commands:
-      - yarn run lint
+      - yarn lint
 
   frontend-build:
     image: webhippie/nodejs:latest
     pull: true
     group: frontend
     commands:
-      - yarn run build
+      - yarn build
 
   backend-build:
     image: webhippie/hugo:latest
@@ -41,74 +41,12 @@ pipeline:
     commands:
       - make build
 
-  docker-amd64:
-    image: plugins/docker:17.05
+  publish-netlify:
+    image: lucap/drone-netlify:latest
     pull: true
-    group: docker
-    secrets: [ docker_username, docker_password ]
-    repo: gomematic/gomematic-docs
-    auto_tag: true
-    auto_tag_suffix: amd64
-    when:
-      event: [push, tag]
-      branch: master
-
-  docker-i386:
-    image: plugins/docker:17.05
-    pull: true
-    group: docker
-    secrets: [ docker_username, docker_password ]
-    repo: gomematic/gomematic-docs
-    dockerfile: Dockerfile.i386
-    auto_tag: true
-    auto_tag_suffix: i386
-    when:
-      event: [push, tag]
-      branch: master
-
-  docker-arm64:
-    image: plugins/docker:17.05
-    pull: true
-    group: docker
-    secrets: [ docker_username, docker_password ]
-    repo: gomematic/gomematic-docs
-    dockerfile: Dockerfile.arm64
-    auto_tag: true
-    auto_tag_suffix: arm64
-    when:
-      event: [push, tag]
-      branch: master
-
-  docker-arm:
-    image: plugins/docker:17.05
-    pull: true
-    group: docker
-    secrets: [ docker_username, docker_password ]
-    repo: gomematic/gomematic-docs
-    dockerfile: Dockerfile.arm
-    auto_tag: true
-    auto_tag_suffix: arm
-    when:
-      event: [push, tag]
-      branch: master
-
-  docker-manifests:
-    image: plugins/manifest:1
-    pull: true
-    secrets: [ docker_username, docker_password ]
-    spec: manifest.yml
-    auto_tag: true
-    ignore_missing: true
-    when:
-      event: [ push, tag ]
-      branch: master
-
-  docker-microbadger:
-    image: plugins/webhook:1
-    pull: true
-    secrets:
-      - source: microbadger_token
-        target: plugin_urls
+    secrets: [ netlify_token ]
+    site_id: 3fd4c2b9-b5e5-4a7b-9ec1-e3e442703016
+    path: public/
     when:
       event: [ push, tag ]
       branch: master
