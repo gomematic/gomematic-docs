@@ -1,13 +1,13 @@
 # Gomematic: Documentation
 
-[![Build Status](http://github.dronehippie.de/api/badges/gomematic/gomematic-docs/status.svg)](http://github.dronehippie.de/gomematic/gomematic-docs)
+[![Build Status](http://drone.gomematic.tech/api/badges/gomematic/gomematic-docs/status.svg)](http://drone.gomematic.tech/gomematic/gomematic-docs)
 [![Stories in Ready](https://badge.waffle.io/gomematic/gomematic-api.svg?label=ready&title=Ready)](http://waffle.io/gomematic/gomematic-api)
 [![Join the Matrix chat at https://matrix.to/#/#gomematic:matrix.org](https://img.shields.io/badge/matrix-%23gomematic%3Amatrix.org-7bc9a4.svg)](https://matrix.to/#/#gomematic:matrix.org)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/673d5717db584f9dbc0671e60c1aa62a)](https://www.codacy.com/app/gomematic/gomematic-docs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gomematic/gomematic-docs&amp;utm_campaign=Badge_Grade)
 
 **This project is under heavy development, it's not in a working state yet!**
 
-Documentation for the Gomematic API and the command line client, you can find this website at [gomematic.webhippie.de](https://gomematic.webhippie.de).
+Documentation for the Gomematic API and the command line client, you can find this website at [gomematic.tech](https://gomematic.tech).
 
 
 ## Hosting
