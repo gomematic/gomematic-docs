@@ -1,0 +1,15 @@
+baseurl: /
+languageCode: en-us
+title: Gomematic
+disableKinds: RSS
+
+outputs:
+  home:
+    - html
+    - json
+
+params:
+  Description: Lightweight and powerful Homematic
+  Author: Gomematic Team
+  Website: https://gomematic.tech
+  Github: gomematic
